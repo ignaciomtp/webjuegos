@@ -1,0 +1,26 @@
+ <!DOCTYPE html>
+ <html>
+     <head>
+         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+         <title>{% block title %}Ola k ase!{% endblock %}</title>
+         {% block stylesheets %}
+            <link href="{{ asset('../bundles/webjuegosjuegosfront/css/bootstrap.css') }}" type="text/css" rel="stylesheet" />
+            <link href="{{ asset('../bundles/webjuegosjuegosfront/css/propio.css') }}" type="text/css" rel="stylesheet" />
+         {% endblock %}
+         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+     </head>
+     <body>
+        <div class="container sep">
+            {% include 'WebjuegosJuegosFrontBundle::barra.html.twig' %}
+        
+            {% block body %}
+
+
+
+            {% endblock %}       
+        
+        </div>
+
+         {% block javascripts %}{% endblock %}
+     </body>
+ </html>

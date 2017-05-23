@@ -1,0 +1,47 @@
+webjuegos_juegos_front_homepage:
+    pattern:  /
+    defaults: { _controller: WebjuegosJuegosFrontBundle:Default:index }
+    
+webjuegos_juegos_front_dots:
+    pattern:  /dots
+    defaults: { _controller: WebjuegosJuegosFrontBundle:Default:verDots }
+    
+webjuegos_juegos_front_tetris:
+    pattern:  /tetris
+    defaults: { _controller: WebjuegosJuegosFrontBundle:Default:verTetris }
+    
+webjuegos_juegos_front_breakout:
+    pattern:  /breakout
+    defaults: { _controller: WebjuegosJuegosFrontBundle:Default:verBreakout }
+    
+webjuegos_juegos_front_registro:
+    pattern:  /registro
+    defaults: { _controller: WebjuegosJuegosFrontBundle:Default:registro }
+
+login:
+    pattern:  /login
+    defaults: { _controller: WebjuegosJuegosFrontBundle:Security:login }
+
+login_check:
+    pattern: /login_check    
+        
+    
+webjuegos_juegos_front_logout:    
+    pattern: /logout
+    
+    
+webjuegos_juegos_front_usuario:
+    pattern:  /miperfil
+    defaults: { _controller: WebjuegosJuegosFrontBundle:Default:usuario }
+    
+webjuegos_juegos_front_admin:
+    pattern:  /admin
+    defaults: { _controller: WebjuegosJuegosFrontBundle:Default:admin }
+    
+guardar_puntuacion:
+    pattern: /guardar
+    defaults: { _controller: WebjuegosJuegosFrontBundle:Guardar2:guardarPuntuacion }
+   
+    
+    
+    

@@ -1,0 +1,130 @@
+{% extends 'WebjuegosJuegosFrontBundle::base.html.twig' %}
+
+{% block stylesheets %}
+   <link href="{{ asset('../bundles/webjuegosjuegosfront/css/bootstrap.css') }}" type="text/css" rel="stylesheet" />
+   <link href="{{ asset('../bundles/webjuegosjuegosfront/css/propio.css') }}" type="text/css" rel="stylesheet" />
+   <link href="{{ asset('../bundles/webjuegosjuegosfront/css/dots.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+
+
+
+{% block body %}
+    <h1>Dots</h1>
+    
+	<div class="" id="tablero">
+            <div class="marcador">
+		<div class="elementoMarcador"><span id="clasePartida">Movimientos</span>
+                    <div id="mov">0</div>
+		</div>
+		<div class="elementoMarcador">Puntos
+                    <div id="ptos">0</div>
+		</div>
+				
+            </div>	
+            
+            <div class="contenedorcanvas">
+		<canvas width="300" height="300" id="recuadro"></canvas>
+                <br/>
+				
+
+            </div>		
+        </div>
+
+
+        <!-- Modal HTML -->
+        <div id="tipopartida" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        
+                        <h3 class="modal-title text-center">Tipo de Partida</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="botontipo">
+                                <button type="button" class="btn btn-lg btn-jugar" onclick="partidaMovimientos()"><span class="glyphicon glyphicon-move" style="font-size: 2.2em"></span><br />Movimientos</button>
+
+                        </div>
+                        <div class="botontipo">
+                                <button type="button" class="btn btn-lg btn-jugar" onclick="partidaContra()"><span class="glyphicon glyphicon-time" style="font-size: 2.2em"></span><br />Contrarreloj</button>
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <!-- Modal HTML -->
+        <div id="gameover" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+
+                        <h2 class="modal-title text-center">Game Over</h2>
+                    </div>
+                    <div class="modal-body">
+
+                        <span id="puntuacion"></span>
+
+                        <div id="datosPartida" >
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <center>
+                            <button type="button" class="btn btn-lg btn-jugar" onclick="otravez()">Jugar otra vez</button>
+                            
+                            <a href="{{ path('webjuegos_juegos_front_homepage') }}" class="btn btn-lg btn-jugar" >Salir</a>
+                        </center>
+
+                    </div>
+                </div>
+            </div>
+        </div>	        
+        
+
+    
+{% endblock %}    
+
+
+{% block javascripts %}
+    <script src="{{ asset('../bundles/webjuegosjuegosfront/js/jquery.js') }}" type="text/javascript"></script>
+    
+    <script>
+        function guardarPartida(){
+            $.ajax({
+                url: "{{ path('guardar_puntuacion') }}",
+                data: {
+                    puntos : puntoNumero,
+                    juego : 3
+                },
+                type: 'POST'
+            });            
+        }        
+    </script>
+    <script src="{{ asset('../bundles/webjuegosjuegosfront/js/bootstrap.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('../bundles/webjuegosjuegosfront/js/main.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('../bundles/webjuegosjuegosfront/js/dots2.js') }}" type="text/javascript"></script>
+    {% if is_granted('ROLE_USER') %}
+        <script src="{{ asset('../bundles/webjuegosjuegosfront/js/dots-log.js') }}" type="text/javascript"></script>
+    {% else %} 
+        <script src="{{ asset('../bundles/webjuegosjuegosfront/js/dots-anon.js') }}" type="text/javascript"></script>
+                        
+    {% endif %}      
+    
+    <script>
+        startup();
+        $(document).ready(function(){
+            iniciarPartida();
+        });
+        
+
+        
+    </script>
+{% endblock %}

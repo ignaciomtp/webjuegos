@@ -1,0 +1,466 @@
+
+.contenedorcanvas{
+	position: relative;	
+	width:302px;
+	height:302px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:0px;
+	background-color:#FFFFFF;
+	border:1px solid black;	
+	
+}
+
+canvas{
+	background-color: #FFFFFF;
+	
+	
+}
+
+.juego{
+	position:absolute;
+	top:0px;
+	left:0px;
+
+	width:300px;
+	height: 300px;
+
+	
+}
+
+.casillapunto{
+	width:50px;
+	height:50px;
+	margin:0px;
+	padding:0px;
+	float:left;
+
+	
+}
+
+
+.juego2{
+	width:300px;
+	height: 300px;
+	border: 1px solid black;
+	margin-left:auto;
+	margin-right:auto;	
+}
+
+.marcador{
+	width:300px;
+	min-height:50px;
+	margin-left:auto;
+	margin-right:auto;	
+	margin-top:30px;
+	margin-bottom:20px;
+	
+}
+
+.elementoMarcador{
+	width:140px;
+	float:left;
+	border: 1px solid #141D1F;
+	margin-left:5px;
+	margin-right:5px;
+	background-color:#5F6C6F;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	color:#EEE;
+	border-radius:5px;
+}
+
+#mov{
+	font-size: 150%;
+	color:#000;
+}
+
+#ptos{
+	font-size: 150%;	
+	color:#000;
+}
+
+#botonnueva{
+	visibility:visible;
+}
+
+#oscuro{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top:0px;
+	left:0px;
+	background-color: #000000;
+	opacity:0.4;
+	z-index: 1;
+	visibility: hidden;
+}
+
+#tipoPartida{
+	width:350px;
+	height: 150px;
+	position: absolute;
+	top:220px;
+	left:34%;
+	text-align:center;
+	background-color: #E0F2F7;
+	border-radius: 8px;
+	padding:10px;
+	z-index: 2;
+	visibility: hidden;
+	
+}
+
+#gameOver{
+	width:350px;
+	
+	position: absolute;
+	top:220px;
+	left:34%;
+	text-align:center;
+	background-color: #E0F2F7;
+	border-radius: 8px;
+	padding:10px;
+	z-index: 3;
+	visibility: hidden;	
+}
+
+.inicio{
+	width:95%;
+	margin-top:20px;
+	margin-left:auto;
+	margin-right:auto;
+	padding:8px;
+	text-align:center;
+	
+}
+
+.foto{
+	float:left;
+	clear:right;
+	
+}
+
+.poderes{
+	width: 300px;
+	margin-top:20px;
+	margin-left:auto;
+	margin-right:auto;
+	padding:20px;
+	border:1px solid #378DDF;
+	background-color:#e8f4ff;	
+	border-radius:6px;
+	
+}
+
+.poderes table{
+	width:100%;
+}
+
+.poderes table td{
+	width: 33%;
+	text-align:center;
+}
+
+.poderes table th{
+	width: 33%;
+	text-align:center;
+}
+
+#comprar{
+	
+	margin-left:auto;
+	margin-right:auto;
+	
+	outline: none;
+}
+
+.poder{
+	width:165px;
+	float: left;
+	margin-left:15px;
+	margin-right:15px;
+	padding:10px;
+	border:1px solid black;	
+	border-radius:6px;
+	background-color: #F2F2F2;
+}
+
+.botonpoder1{
+	width:30px;
+	height:30px;
+	border-radius: 100%;
+	background-color: #8904B1;
+	color:#FFFFFF;
+	border:0;
+	padding:6px;
+}
+
+.botonpoder2{
+	width:30px;
+	height:30px;
+	border-radius: 100%;
+	background-color: #FE2E2E;
+	color:#FFFFFF;
+	border:0;
+	padding-top:0px;
+	padding-left:6px;	
+}
+
+.botonpoder3{
+	width:30px;
+	height:30px;
+	border-radius: 100%;
+	background-color: #04B45F;
+	color:#FFFFFF;
+	border:0;
+	padding:6px;
+}
+
+
+
+.poderes table td{
+	font-size: 1.5em;
+}
+
+.datos{
+	
+	margin-left: 170px;
+	text-align:left;
+	color: #5ba6ef;
+	font-size:1.5em;	
+	clear: right;
+}
+
+.datostexto{
+	color: #0B0B61;
+	font-size: 0.9em;
+}
+
+.botontipo{
+	width:49%;
+	float:left;
+	text-align:center;
+}
+
+.userpod{
+	clear: both;
+	
+}
+
+
+.texto{
+	margin-top:30px;
+	margin-bottom:30px;
+	font-family: Georgia, serif;
+}
+
+.formulario{
+	width: 400px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.botonperfil{
+	min-width:150px;
+}
+
+.titulospoderes{
+	
+	font-size:85%;
+}
+
+.userpod table td{
+	font-size:150%;
+	
+	color: #378ddf;
+}
+
+.faq{
+	width:90%;
+	margin-top:100px;
+	margin-left:auto;
+	margin-right:auto;
+	padding:15px;
+	text-align:left;
+	color: #378DDF;
+}
+
+.faq h1, h2, h3{
+	color: #eee;
+}
+
+.faq p{
+	text-align:justify;
+	font-size: 1.2em;
+}
+
+.imglob{
+	width:32px;
+	height:32px;
+	margin:0;
+	overflow: hidden;
+	border:1px solid white;	
+}
+
+.mejores{
+	font-size:1.2em;
+	
+}
+
+.mejorespuntos{
+	font-weight: bold;
+	color: #378DDF;
+	
+}
+
+.errorval{
+	margin-left:20px;
+	color: red;
+	
+}
+
+#preview{
+	width:200px;
+	position:absolute;
+	border:1px solid #ccc;
+	background:#333;
+	padding:5px;
+	display:none;
+	color:#fff;
+	}
+
+#preview img{
+	width:100%;
+	overflow:hidden;
+}
+
+.botonesfacebook{
+	
+	padding:1px;
+	margin-top:55px;
+	margin-left:20px;
+	text-align:left;
+	
+	float:left;
+}
+
+.botonesfacebook2{
+	width:150px;
+	padding:1px;
+	margin-top:10px;
+	margin-left:5px;
+	text-align:left;
+	
+	float:left;
+	
+}
+
+#cont_formulario{
+	padding:40px 60px;
+	
+	margin-bottom:40px;
+	border:1px solid #EEE;
+}
+
+
+#cont_formulario form{
+	width:450px;
+	border:1px solid #2B2D68;
+	padding:30px;
+	background-color:#FFF;
+	margin:0 auto;
+}
+
+#cont_formulario form label{
+	display:block;
+	margin-bottom:4px;
+	color:#2D3790;
+	font-weight:bold;
+	font-size:13px;
+	font-family:'Oswald', sans-serif;
+}
+
+#cont_formulario form input, select, textarea{
+	display:block;
+	margin-bottom:20px;
+	width:385px !important;
+	padding:4px;
+	color:#333;
+	border:1px solid #CCC;
+	font-family:"Trebuchet MS", Arial, Helvetica;
+	font-size:1em;
+}
+
+#cont_formulario form input:focus{
+	background-color:#F3FBFF;
+}
+
+#cont_formulario form select:focus{
+	background-color:#F3FBFF;
+}
+
+#cont_formulario form textarea:focus{
+	background-color:#F3FBFF;
+}
+
+#enviar{
+	width:auto;
+	color:#FFF !important;
+	padding:6px 10px;
+	background-color:#2B2D68;
+	border:1px solid #30326B;
+	font-family:'Oswald', sans-serif;
+	font-weight:300;
+	letter-spacing:1px;
+	margin:0 auto;
+}
+
+#enviar:hover{
+	background-color:#61ADE1;
+	border-color:#08A3E5;
+}
+
+
+#tablero{
+   
+}
+
+.centrar{
+    margin:0 auto;
+}
+
+#topscores .nuevo-record{
+    background-color: #FFF;
+    font-size: 120%;
+    font-weight: bold;
+    color: #444F52;
+}
+
+#topscores .modal-content{
+    margin-top:20px;
+}
+
+#topscores table{
+    background-color: #EEE;
+    color:#141D1F;
+}
+
+#topscores thead{
+    background-color: #444F52;
+    color: #FFF;
+}
+
+.btn-jugar{
+    background-color: #444F52;
+    border-color: #0D1B1F;
+    color: #EEE;
+}
+
+.btn-jugar:hover{
+    color:#0D1B1F;
+}
+
+#puntuacion{
+    color: #5F6C6F;
+}

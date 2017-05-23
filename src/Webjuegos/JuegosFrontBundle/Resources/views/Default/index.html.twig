@@ -1,0 +1,43 @@
+{% extends 'WebjuegosJuegosFrontBundle::base.html.twig' %}
+
+{% block body %}
+    
+
+    <h1>Portada</h1> 
+    
+    <div class="well">
+        <div class="col-md-4">
+            <a href="{{ path('webjuegos_juegos_front_tetris') }}">
+                <div class="text-center">
+                    <img src="{{ asset('../bundles/webjuegosjuegosfront/images/tetris.gif') }}" alt="tetris" class="img-responsive" />
+                    
+                    <h3>Tetris</h3>
+                </div>
+            </a>
+        </div>
+        
+        <div class="col-md-4">
+            <a href="{{ path('webjuegos_juegos_front_dots') }}">
+                <div class="text-center">
+                    <img src="{{ asset('../bundles/webjuegosjuegosfront/images/dots.gif') }}" alt="dots" class="img-responsive" />
+                    
+                    <h3>Dots</dots>
+                </div>
+            </a>            
+        </div>
+        
+        <div class="col-md-4">
+            <a href="{{ path('webjuegos_juegos_front_breakout') }}">
+                <div class="text-center">
+                    <img src="{{ asset('../bundles/webjuegosjuegosfront/images/breakout.gif') }}" alt="breakout" class="img-responsive" />
+                    
+                    <h3>Breakout</h3>
+                </div>
+            </a>            
+        </div>
+                    
+                    <div class="limpiar"></div>            
+    </div>
+    
+    
+{% endblock %}    
