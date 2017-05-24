@@ -13,16 +13,16 @@
         <div class="col-md-4 text-right lateral">
             <div class="col-dcha">
                 <h5>GUARDAR:   </h5>
+               
+                
+                <div class="elementoMarcador">
+                    <div id="guardada"></div>
+                </div>    
+
                 <div class="abajo">
                     <h5>NIVEL: </h5>
                     <div id="nivel">1</div>
-                </div>                       
-                
-                <div class="elementoMarcador">
-
-                </div>    
-
-         
+                </div>                 
             </div>
             <div class="limpiar"></div>
         </div>
@@ -57,10 +57,11 @@
 
                     <h2 class="modal-title text-center">Controles</h2>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body text-center">
                     <p>
                         Mover pieza: flechas de dirección.<br />
-                        Girar: tecla A o D.
+                        Girar: tecla A o D.<br />
+                        Cambiar Pieza: barra espaciadora
                     </p>
 
                 </div>
@@ -78,8 +79,26 @@
 
 {% block javascripts %}
     <script src="{{ asset('../bundles/webjuegosjuegosfront/js/jquery.js') }}" type="text/javascript"></script>
+    <script>
+        function guardarPartida(){
+            $.ajax({
+                url: "{{ path('guardar_puntuacion') }}",
+                data: {
+                    puntos : numLineas,
+                    juego : 1
+                },
+                type: 'POST'
+            });            
+        }        
+    </script>
     <script src="{{ asset('../bundles/webjuegosjuegosfront/js/bootstrap.js') }}" type="text/javascript"></script>
     <script src="{{ asset('../bundles/webjuegosjuegosfront/js/tetris_1.js') }}" type="text/javascript"></script>
+    {% if is_granted('ROLE_USER') %}
+        <script src="{{ asset('../bundles/webjuegosjuegosfront/js/tetris-log.js') }}" type="text/javascript"></script>
+    {% else %} 
+        <script src="{{ asset('../bundles/webjuegosjuegosfront/js/tetris-anon.js') }}" type="text/javascript"></script>
+                        
+    {% endif %}  
     <script>
         $('#controles').modal('show');
     </script>

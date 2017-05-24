@@ -5,7 +5,7 @@ var canvas = document.getElementById("canvasJuego");
 var context = canvas.getContext("2d");
 
 var proximaPieza = Math.round(Math.random()*6); 
-
+var piezaGuardada = -1;
 var cayendo;
 var otraPieza = 1;
 var nivel = 1;
@@ -28,6 +28,8 @@ for(var i = 0; i < 14; i++){
         tablero[i][j] = 0;
     }
 }
+
+
 
 
 function Pieza(){
@@ -327,8 +329,8 @@ Pieza.prototype.caer = function(){
     context.drawImage(this.imagen, this.posX, this.posY);
     if(comprobarCasillasInferiores(p) || this.posY + this.alto >= 480){
         this.contacto = 1;
-        console.log("Ha tocado fondo");
-        console.log(this.posX, this.posY);
+        //console.log("Ha tocado fondo");
+        console.log(this.tipo);
         
         clearInterval(cayendo);
         
@@ -342,7 +344,7 @@ Pieza.prototype.caer = function(){
   
         if(comprobarGameOver()){
             jugando = 0;
-            alert("Game Over");
+            gameOver();
         }
         else{
             aumentarVelocidad();
@@ -362,6 +364,9 @@ document.addEventListener('keydown', function(event) {
     else if(event.keyCode == 68) {
         rotarDerecha();
     }
+    else if(event.keyCode == 32){
+        cambiarPieza(p);
+    }
 });
 
 document.addEventListener('keydown', function(event){
@@ -372,7 +377,7 @@ document.addEventListener('keydown', function(event){
         case 39:
             moverPiezaD();
             break;
-        case 32:
+        case 192:
             jugando = 0;
             break;
         case 80:
@@ -522,6 +527,12 @@ function blanquear2(x, y, anchoPieza, altoPieza, tipoPieza, inclinacion){
             }
             break;
     }
+    
+}
+
+function blanquear3(anchoPieza, posX, posY){
+    context.fillStyle = "black";
+    context.fillRect(posX, 0, anchoPieza, posY);
     
 }
 
@@ -1075,10 +1086,40 @@ function lanzarPieza(){
 
         proximaPieza = Math.round(Math.random()*6);
         dibujarProxima(proximaPieza);
-        //cayendo = setInterval("p.caer()", velocidad);    
+        cayendo = setInterval("p.caer()", velocidad);    
           
     }
   
+}
+
+function cambiarPieza(Pieza){
+    if(piezaGuardada == -1){
+        blanquear3(Pieza.ancho, Pieza.posX, Pieza.posY + Pieza.alto);
+        piezaGuardada = Pieza.tipo;
+        dibujarGuardada(piezaGuardada);
+        Pieza.tipo = proximaPieza;
+        Pieza.inc = 1;
+        proximaPieza = Math.round(Math.random()*6);
+        dibujarProxima(proximaPieza);
+        blanquear3(Pieza.ancho, Pieza.posX, Pieza.posY + Pieza.alto);
+        Pieza.posY = 0;
+        Pieza.cargarDimensiones();
+        Pieza.cargarImg();
+        //context.drawImage(Pieza.imagen, Pieza.posX, Pieza.posY);
+    }
+    else{
+        blanquear3(Pieza.ancho, Pieza.posX, Pieza.posY + Pieza.alto);
+        var temporal = piezaGuardada;
+        piezaGuardada = Pieza.tipo;
+        dibujarGuardada(piezaGuardada);
+        Pieza.tipo = temporal;
+        Pieza.inc = 1;
+        blanquear3(Pieza.ancho, Pieza.posX, Pieza.posY + Pieza.alto);
+        Pieza.posY = 0;
+        Pieza.cargarDimensiones();
+        Pieza.cargarImg();
+        //context.drawImage(Pieza.imagen, Pieza.posX, Pieza.posY);
+    }
 }
 
 function acelerar(){
@@ -1237,8 +1278,39 @@ function dibujarProxima(proxima){
            
     }    
     
-    document.getElementById('proxima').innerHTML = "<img src='" + url + "' />";
     
+    $('#proxima').html("<img src='" + url + "' />");
+}
+
+function dibujarGuardada(guardada){
+    var url;
+    switch(guardada){
+        case 0:
+            url = "../bundles/webjuegosjuegosfront/images/piezastetris/barra1.png";
+            break;
+        case 1:
+            url = "../bundles/webjuegosjuegosfront/images/piezastetris/cubo.png";
+            break;
+        case 2:
+            url = "../bundles/webjuegosjuegosfront/images/piezastetris/ld1.png";
+            break;
+        case 3:
+            url = "../bundles/webjuegosjuegosfront/images/piezastetris/li1.png";
+            break;
+        case 4:
+            url = "../bundles/webjuegosjuegosfront/images/piezastetris/sd1.png";
+            break;
+        case 5:
+            url = "../bundles/webjuegosjuegosfront/images/piezastetris/si1.png";
+            break;
+        case 6:
+            url = "../bundles/webjuegosjuegosfront/images/piezastetris/t1.png";
+            break;
+           
+    }    
+    
+    //document.getElementById('proxima').innerHTML = "<img src='" + url + "' />";
+    $('#guardada').html("<img src='" + url + "' />");
 }
 
 function aumentarVelocidad(){
