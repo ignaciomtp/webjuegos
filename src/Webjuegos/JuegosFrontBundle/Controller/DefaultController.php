@@ -39,7 +39,33 @@ class DefaultController extends Controller
     }    
         
     public function usuarioAction(){
-        return $this->render('WebjuegosJuegosFrontBundle:Default:perfil.html.twig');
+        $session = $this->get('session');
+        $user = $this->getUser();
+        $em = $this->getDoctrine()->getEntityManager();
+        
+        $idUsuario = $user->getId();
+    
+
+        $query = $em
+       ->createQuery(
+         "SELECT n FROM WebjuegosJuegosFrontBundle:Partida n where n.idUsuario = :id and n.idJuego = :idj")
+       ->setParameter('id', "$idUsuario")
+       ->setParameter('idj', 1);
+        
+        $partidasTetris = $query->getResult();
+       
+        $query = $em
+       ->createQuery(
+         "SELECT n FROM WebjuegosJuegosFrontBundle:Partida n where n.idUsuario = :id and n.idJuego = :idj")
+       ->setParameter('id', "$idUsuario")
+       ->setParameter('idj', 3);
+        
+        $partidasDots = $query->getResult();
+        
+       // $partidasUsuario = $em->getRepository('WebjuegosJuegosFrontBundle:Partida')->findAll();
+
+        return $this->render('WebjuegosJuegosFrontBundle:Default:perfil.html.twig', array('partidasTetris' => $partidasTetris,
+                'partidasDots' => $partidasDots, 'usuario' => $user));
     }
     
 }

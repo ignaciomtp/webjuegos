@@ -16,7 +16,7 @@ webjuegos_juegos_front_breakout:
     
 webjuegos_juegos_front_registro:
     pattern:  /registro
-    defaults: { _controller: WebjuegosJuegosFrontBundle:Default:registro }
+    defaults: { _controller: WebjuegosJuegosFrontBundle:Guardar:formUsuario }
 
 login:
     pattern:  /login
@@ -41,7 +41,3 @@ webjuegos_juegos_front_admin:
 guardar_puntuacion:
     pattern: /guardar
     defaults: { _controller: WebjuegosJuegosFrontBundle:Guardar2:guardarPuntuacion }
-   
-    
-    
-    

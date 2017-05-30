@@ -1,0 +1,43 @@
+{% extends 'WebjuegosJuegosFrontBundle::base.html.twig' %}
+
+{% block body %}
+    
+
+      <h1>Nuevo Usuario</h1>
+
+      {{ form_start(form) }}
+      {{ form_errors(form) }}
+
+      <div>
+          {{ form_label(form.nombre_usuario) }}
+          {{ form_errors(form.nombre_usuario) }}
+          {{ form_widget(form.nombre_usuario) }}
+      </div>
+
+
+      <div>
+          {{ form_label(form.email) }}
+          {{ form_errors(form.email) }}
+          {{ form_widget(form.email) }}
+      </div>
+
+
+      <div>
+          {{ form_label(form.password) }}
+          {{ form_errors(form.password) }}
+          {{ form_widget(form.password) }}
+      </div>
+
+      <div>
+          {{ form_label(form.imagen) }}
+          {{ form_errors(form.imagen) }}
+          {{ form_widget(form.imagen) }}
+      </div>
+      
+      
+      {{ form_rest(form) }}
+
+      {{ form_end(form) }}    
+    
+    
+{% endblock %}    
