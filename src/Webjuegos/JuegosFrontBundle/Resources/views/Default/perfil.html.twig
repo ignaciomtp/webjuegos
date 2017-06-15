@@ -3,13 +3,20 @@
 {% block body %}
     <h1>Mi Perfil</h1>
     
-    <div class="col-md-3">
+    <div class="text-center perfil col-md-3">
         <div class="well">
-            <div class="text-center">
+            <div class="fondoblanco">
                 {% if usuario.imagen != null %}
-                    <img src="{{ asset('uploads/imagenes/' ~ usuario.imagen) }}" class="img img-responsive" />
+                    <img src="{{ asset('uploads/imagenes/' ~ usuario.imagen) }}" class="img img-responsive img-thumbnail" />
+                {% else %}    
+                    <img src="{{ asset('uploads/imagenes/usuario.png') }}" class="img img-responsive img-thumbnail" />
                 {% endif %}
             </div>
+            
+            <p>
+                {{ app.user.username }} 
+            </p>
+            <button class="btn btn-sm btn-success" id="botonEditarPerfil">Editar Perfil</button>
         </div>
     </div>
     
@@ -93,7 +100,30 @@
             </div>
         </div>
     </div>
-    
+  
+                            
+         <div id="editar" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+
+                        <h2 class="modal-title text-center">Editar Perfil</h2>
+                    </div>
+                    <div class="modal-body">
+
+                    </div>
+                    <div class="modal-footer">
+                        <center>
+                           
+                            
+                            <a href="{{ path('webjuegos_juegos_front_homepage') }}" class="btn btn-lg btn-jugar" >Salir</a>
+                        </center>
+
+                    </div>
+                </div>
+            </div>
+        </div>	                                   
+                            
 {% endblock %}    
 
 {% block javascripts %}
@@ -108,7 +138,12 @@
         
         $(document).ready(function(){
           activaTab('partidastetris');
+          $('#botonEditarPerfil').click(function(){
+              $('#editar').modal('show');
+          });
         });
+
+
 
     </script>
 {% endblock %}

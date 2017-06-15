@@ -1,43 +1,55 @@
 {% extends 'WebjuegosJuegosFrontBundle::base.html.twig' %}
 
+{% block stylesheets %}
+      
+    <link href="{{ asset('../bundles/webjuegosjuegosfront/css/bootstrap.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('../bundles/webjuegosjuegosfront/css/cover.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('../bundles/webjuegosjuegosfront/css/propio.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('../bundles/webjuegosjuegosfront/css/portada.css') }}" type="text/css" rel="stylesheet" />
+    
+{% endblock %}
+
+
 {% block body %}
     
+    <div class="site-wrapper sep sep-bottom">
 
-    <h1>Portada</h1> 
-    
-    <div class="well">
-        <div class="col-md-4">
-            <a href="{{ path('webjuegos_juegos_front_tetris') }}">
-                <div class="text-center">
-                    <img src="{{ asset('../bundles/webjuegosjuegosfront/images/tetris.gif') }}" alt="tetris" class="img-responsive" />
-                    
-                    <h3>Tetris</h3>
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+
+
+          <div class="inner cover ">
+            <h1 class="cover-heading">Cover your page.</h1>
+            <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+
+            <a href="/tetris">
+                <div class="jugar" id="juego-tetris">
+                
                 </div>
             </a>
-        </div>
-        
-        <div class="col-md-4">
-            <a href="{{ path('webjuegos_juegos_front_dots') }}">
-                <div class="text-center">
-                    <img src="{{ asset('../bundles/webjuegosjuegosfront/images/dots.gif') }}" alt="dots" class="img-responsive" />
-                    
-                    <h3>Dots</dots>
+            
+            <a href="/breakout">
+                <div class="jugar" id="juego-breakout">
+                
                 </div>
-            </a>            
-        </div>
-        
-        <div class="col-md-4">
-            <a href="{{ path('webjuegos_juegos_front_breakout') }}">
-                <div class="text-center">
-                    <img src="{{ asset('../bundles/webjuegosjuegosfront/images/breakout.gif') }}" alt="breakout" class="img-responsive" />
-                    
-                    <h3>Breakout</h3>
+            </a>
+            
+            <a href="/dots">
+                <div class="jugar" id="juego-dots">
+                
                 </div>
-            </a>            
+            </a>
+            
+          </div>
+
+
+
         </div>
-                    
-                    <div class="limpiar"></div>            
+
+      </div>
+
     </div>
-    
     
 {% endblock %}    

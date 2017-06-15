@@ -1,7 +1,114 @@
 {% extends 'WebjuegosJuegosFrontBundle::base.html.twig' %}
 
+{% block stylesheets %}
+   <link href="{{ asset('../bundles/webjuegosjuegosfront/css/bootstrap.css') }}" type="text/css" rel="stylesheet" />
+   <link href="{{ asset('../bundles/webjuegosjuegosfront/css/propio.css') }}" type="text/css" rel="stylesheet" />
+   <link href="{{ asset('../bundles/webjuegosjuegosfront/css/main2.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
 {% block body %}
-    <h1>Breakout</h1>
+        <div class="container">
+            <div class="sep text-center">
+                <div class="col-md-2">
+                    
+                    <div class="elemento-marcador" >
+                        <h4>Nivel:</h4>
+                        <div id="nivel">
+                            1
+                        </div>
+                            
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <canvas id="miCanvas" width="600" height="400"></canvas>                    
+                </div>
+                <div class="col-md-2">
+                    
+                    <div class="elemento-marcador" >
+                        <h4>Puntos:</h4>
+                        <div id="puntos">
+                            0
+                        </div>
+                    </div>                    
+                </div>                
+                
+                <div class="limpiar"></div>
+                <br />
+                <button type="button" class="btn btn-lg btn-info" id="empezar" >Empezar</button>
+            </div>
+        </div>
+
+
+
+    <!-- Modal HTML -->
+    <div id="gameover" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <h2 class="modal-title text-center">Game Over</h2>
+                </div>
+                <div class="modal-body text-center">
+                    
+                        <h3>Has Perdido :(</h3>
+                    
+
+                </div>
+                <div class="modal-footer">
+                    <center>
+                        <button type="button" class="btn btn-lg btn-info" id="otravez" >Jugar Otra Vez</button>
+                        <a href="../" class="btn btn-lg btn-danger">Salir</a>
+                    </center>
+
+                </div>
+            </div>
+        </div>
+    </div>	        
+
+    
+
+        <!-- Modal HTML -->
+        <div id="nextlevel" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+
+                        <h2 class="modal-title text-center">Enhorabuena!</h2>
+                    </div>
+                    <div class="modal-body text-center">
+
+                        <h3>Siguiente Nivel: <span id="numnextlevel"></span></h3>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <center>
+                            <button type="button" class="btn btn-lg btn-info" id="empezar2" >Empezar</button>
+                            
+                        </center>
+
+                    </div>
+                </div>
+            </div>
+        </div>	    
+
+        
+        <script src="{{ asset('../bundles/webjuegosjuegosfront/js/jquery.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('../bundles/webjuegosjuegosfront/js/bootstrap.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('../bundles/webjuegosjuegosfront/js/breakout.js') }}" type="text/javascript"></script>
+        <script>
+            $( document ).ready(function() {
+                $('#empezar').click(empezar);
+                $('#empezar2').click(subirNivel);
+                
+                $('#otravez').click(function(){
+                    location.reload();
+                    dibujar();
+                });
+                
+            });
+        </script>
+    </body>    
     
     
     

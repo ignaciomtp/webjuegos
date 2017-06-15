@@ -1,0 +1,103 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+
+body{
+    background: #282f31 repeat-y fixed;;
+    
+}
+
+body .jumbotron{
+    color: #CCC;
+}
+
+#losjuegos .texto-juego{
+    font-size: 14px;
+}
+
+.fondo{
+    background-color: #0D1B1F;
+    padding-bottom: 10px;
+}
+
+.fondo h2{
+    text-align: center;
+    color: #CCC;
+}
+
+.fondo p{
+    color: #5F6C6F;
+}
+
+.fondo .texto-juego{
+    padding:10px;
+}
+
+.img-peq{
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    
+}
+
+
+canvas{ 
+    background-color: #2f4f4f; 
+}
+
+.sep{
+    margin-top: 50px;
+}
+
+.limpiar{
+    clear:both;
+}
+
+
+.elemento-marcador{
+	width:140px;
+	border: 1px solid #141D1F;
+	margin-left:5px;
+	margin-right:5px;
+	background-color:#5F6C6F;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	color:#EEE;
+	border-radius:5px;
+}
+
+#puntos, #nivel{
+    font-size: 150%;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.btn-jugar {
+    background-color: #444F52;
+    border-color: #0D1B1F;
+    color: #EEE;
+    margin-top: 20px;
+}
+
+.modal-body{
+    color:#fff;
+}
+
+.jumbotron p {
+    margin-bottom: 15px;
+    font-size: 21px;
+    font-weight: 200;
+}
+
+.fondo {
+    background-color: #0D1B1F;
+    padding-bottom: 10px;
+}
+
+body .jumbotron {
+    color: #CCC;
+}

@@ -9,7 +9,44 @@ and open the template in the editor.
 */
 
 
+html, body {
+    background-color: #282F31;
+  
+}
 
+
+.site-wrapper{
+    
+    border-radius: 6px;
+}
+
+.jugar{
+    width:700px;
+    height: 170px;
+    margin:50px auto;
+    border-radius: 6px;
+    border:1px solid #fff;
+}
+
+.jugar:hover{
+    border:1px solid #58acfa;
+}
+
+.sep-bottom{
+    margin-bottom: 50px;
+}
+
+#juego-tetris{
+    background-image: url('../images/tetris.png');
+}
+
+#juego-breakout{
+    background: url('../images/breakout.png');
+}
+
+#juego-dots{
+    background: url('../images/dots.png');
+}
 .sep{
     margin-top: 60px;
 }
@@ -32,4 +69,20 @@ and open the template in the editor.
 .puntuaciones{
     background-color: #ccc;
     color:#101010;
+}
+
+.fondoblanco{
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.tab-content > .active{
+    border-left:1px solid #ddd;
+    border-right:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    
+}
+
+.perfil{
+    color:#000;
 }
